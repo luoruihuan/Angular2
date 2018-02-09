@@ -1,37 +1,18 @@
-import { Component } from '@angular/core';
+import{Component} from "@angular/core"
 
-import {Hero}	from './hero';	//英雄格式验证的类
-import {HeroService} from './hero.service'; //英雄列表数据
-
-@Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
+@Component ({
+	selector:'my-app',
+	template: `
+	<h1>{{title}}</h1>
+	<nav>
+		<a routerLink="/dashboard" routerLinkActive="active">主页</a>
+		<a routerLink="/heroes" routerLinkActive="active">英雄们</a>
+	</nav>
+	<router-outlet></router-outlet>
+`,
 	styleUrls: ['./app.component.css'],
-	providers:[HeroService]
 })
 
 export class AppComponent {
-	title = '我的英雄们';
-	selectedHero: Hero;
-	heroes :Hero[];
-
-	constructor(private heroService:HeroService){
-	
-	}
-
-	getHeroes():void{
-		this.heroService.getHeroes().then(heroes=>this.heroes=heroes);
-	}
-
-	ngOnInit(): void {
-		this.getHeroes();
-	}
-
-	onSelect(hero: Hero):void {
-		this.selectedHero = hero;
-	}
+	title = '英雄展览';
 }
-
-
-
-

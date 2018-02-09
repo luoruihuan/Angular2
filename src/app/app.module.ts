@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';//导入 Angular 模�
 import { FormsModule } from '@angular/forms'; //表单模块
 import { HttpModule } from '@angular/http';//http服务
 
-// Imports for loading & configuring the in-memory web api
+// Imports for loading & configuring the in-memory web api u/3863195748
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
@@ -15,6 +15,7 @@ import { HeroesComponent } from './heros.component';
 import { HeroService } from './hero.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HeroSearchComponent } from './hero-search.component';
 
 
 
@@ -33,7 +34,8 @@ import { AppRoutingModule } from './app-routing.module';
 		AppComponent,
 		DashboardComponent,
 		HeroDetailComponent,
-		HeroesComponent
+		HeroesComponent,
+		HeroSearchComponent
 	],
 	//指定应用程序的根级别需要使用的service
 	providers: [
